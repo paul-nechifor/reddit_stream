@@ -146,7 +146,7 @@ class CommentStream(Thread):
             if comment['_code'] > self.lastCode:
                 newComments.append(comment)
 
-        if len(newComments) > 0:
+        if len(newComments) == 0:
             return
 
         self.lastCode = newComments[-1]['_code']
