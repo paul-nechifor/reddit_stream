@@ -136,10 +136,6 @@ class CommentStream(Thread):
 
         if len(comments) == 0:
             self.before = None
-            self.messageDispatcher.push({
-                'type': 'error',
-                'errorType': 'noComments',
-            })
             return
 
         comments.sort(key=lambda k: k['_code'])
@@ -149,6 +145,10 @@ class CommentStream(Thread):
         for comment in comments:
             if comment['_code'] > self.lastCode:
                 newComments.append(comment)
+
+        if len(newComments) > 0:
+            return
+
         self.lastCode = newComments[-1]['_code']
 
         self.messageDispatcher.push({
