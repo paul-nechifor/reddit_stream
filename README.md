@@ -1,3 +1,7 @@
+# This repository has been moved to [gitlab.com/paul-nechifor/reddit_stream](http://gitlab.com/paul-nechifor/reddit_stream).
+
+Old readme:
+
 Reddit Stream
 =============
 
